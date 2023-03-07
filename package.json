@@ -1,0 +1,20 @@
+{
+  "name": "zhatzpt",
+  "version": "0.0.1",
+  "description": "A telegram bot that uses the ChatGPT backend.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "chazeon",
+  "license": "ISC",
+  "dependencies": {
+    "openai": "^3.2.1",
+    "remark-parse": "^10.0.1",
+    "remark-stringify": "^10.0.2",
+    "telegraf": "^4.12.1",
+    "unified": "^10.1.2",
+    "unist-util-visit": "^4.1.2"
+  },
+  "type": "module"
+}
