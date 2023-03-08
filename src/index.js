@@ -1,9 +1,9 @@
-import { Telegraf } from 'telegraf';
-import { message } from 'telegraf/filters';
-import { completeChat } from "./chat.js";
-import { tfmEscape } from "./tfm.js";
+import { Telegraf } from "telegraf"
+import { message } from "telegraf/filters"
+import { completeChat } from "./chat.js"
+import { tfmEscape } from "./tfm.js"
 
-const bot = new Telegraf(process.env.BOT_TOKEN);
+const bot = new Telegraf(process.env.BOT_TOKEN)
 
 const chats = {}
 
@@ -40,16 +40,16 @@ class Chat {
 bot.start((ctx) => {
     const chatId = ctx.message.chat.id
     chats[chatId] = new Chat()
-    ctx.reply('Welcome')
+    ctx.reply("Welcome")
 })
 
 bot.command("reset", (ctx) => {
     const chatId = ctx.message.chat.id
     chats[chatId] = new Chat()
-    ctx.reply('Welcome')
+    ctx.reply("Welcome")
 })
 
-bot.on(message('text'), async (ctx) => {
+bot.on(message("text"), async (ctx) => {
     const chatId = ctx.message.chat.id
     const chat = chats[chatId]
     let text = await chat.getResponse(ctx.message.text)
@@ -66,7 +66,7 @@ bot.on(message('text'), async (ctx) => {
     }
 })
 
-bot.launch();
+bot.launch()
 
-process.once('SIGINT', () => bot.stop('SIGINT'));
-process.once('SIGTERM', () => bot.stop('SIGTERM'));
+process.once("SIGINT", () => bot.stop("SIGINT"))
+process.once("SIGTERM", () => bot.stop("SIGTERM"))
