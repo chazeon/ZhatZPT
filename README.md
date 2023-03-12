@@ -1,6 +1,6 @@
 # ZhatZPT
 
-A Telegram chatbot that uses the ChatGPT API.
+A Telegram chatbot that uses the ChatGPT API, with support for Telegram's [MarkdownV2](https://core.telegram.org/bots/api#markdownv2-style) format.
 
 ## Usage
 
@@ -36,4 +36,8 @@ export OPENAI_API_KEY=xxx
 
 node src/index.js
 ```
+
+## Licence
+
+[MIT](./LICENCE).
 
