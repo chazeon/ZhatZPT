@@ -1,0 +1,14 @@
+[Unit]
+Description=ZhatZpt Telegram Chatbot
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+ExecStart=/usr/bin/node .
+WorkingDirectory=xxx
+Restart=always
+RestartSec=10
+Environment=BOT_TOKEN=xxx OPENAI_API_KEY=xxx
+
+[Install]
+WantedBy=default.target
